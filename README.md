@@ -13,10 +13,6 @@ A comprehensive FAQ chatbot system built using machine learning and natural lang
 - [Model Details](#model-details)
 - [Dataset](#dataset)
 - [API Endpoints](#api-endpoints)
-- [Development](#development)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## 🎯 Overview
 
@@ -36,8 +32,8 @@ This project implements an intelligent FAQ chatbot system designed to automatica
 ## 🛠 Technologies Used
 
 ### Core Technologies
-- **Python 3.x**: Primary programming language
-- **Flask**: Web framework for API development
+- **Python 3.11.6**: Primary programming language
+- **Streamlit**: Web framework for API development
 - **Scikit-learn**: Machine learning library for SVM implementation
 - **Joblib**: Model serialization and deserialization
 - **NumPy**: Numerical computing
@@ -55,17 +51,11 @@ This project implements an intelligent FAQ chatbot system designed to automatica
 
 ```
 ITM_454_FAQ_Chatbot/
-│
-├── app.py                              # Main Flask application
+├── app.py                              # Main Streamlit application
 ├── dataset.json                        # FAQ dataset with questions and answers
 ├── requirements.txt                    # Python dependencies
 ├── pipeline_svm.joblib                 # Trained SVM pipeline model
 ├── faq_with_embeddings.joblib          # FAQ data with embeddings
-│
-├── .ipynb_checkpoints/                 # Jupyter notebook checkpoints
-├── .virtual_documents/                 # Virtual document cache
-├── final-project-env/                  # Virtual environment (not tracked)
-│
 └── README.md                           # Project documentation (this file)
 ```
 
@@ -102,12 +92,6 @@ source final-project-env/bin/activate
 
 ```bash
 pip install -r requirements.txt
-```
-
-### Step 4: Verify Installation
-
-```bash
-python -c "import flask, sklearn, joblib; print('All dependencies installed successfully!')"
 ```
 
 ## 💻 Usage
@@ -152,26 +136,7 @@ The chatbot uses a sophisticated dual-approach ML system:
 
 ### Training Process
 
-#### Step 1: Generate SBERT Embeddings
-
-```python
-from sentence_transformers import SentenceTransformer
-import numpy as np
-import pandas as pd
-import joblib
-
-# Load pre-trained SBERT model
-sbert = SentenceTransformer("all-MiniLM-L6-v2")
-
-# Generate embeddings for each question
-df_expanded["embedding"] = df_expanded["question"].apply(lambda x: sbert.encode(x))
-
-# Save embeddings for future use
-joblib.dump(df_expanded, "faq_with_embeddings.joblib")
-print("SBERT FAQ Embeddings Saved Successfully!")
-```
-
-#### Step 2: Train SVM Pipeline
+#### Step 1: Train SVM Pipeline
 
 ```python
 from sklearn.pipeline import Pipeline
@@ -192,6 +157,25 @@ joblib.dump(pipeline, 'pipeline_svm.joblib')
 print("SVM Pipeline Saved Successfully!")
 ```
 
+#### Step 2: Generate SBERT Embeddings
+
+```python
+from sentence_transformers import SentenceTransformer
+import numpy as np
+import pandas as pd
+import joblib
+
+# Load pre-trained SBERT model
+sbert = SentenceTransformer("all-MiniLM-L6-v2")
+
+# Generate embeddings for each question
+df_expanded["embedding"] = df_expanded["question"].apply(lambda x: sbert.encode(x))
+
+# Save embeddings for future use
+joblib.dump(df_expanded, "faq_with_embeddings.joblib")
+print("SBERT FAQ Embeddings Saved Successfully!")
+```
+
 ### Why Two Approaches?
 
 - **SVM with TF-IDF**: Fast, accurate for exact keyword matching
@@ -202,9 +186,8 @@ print("SVM Pipeline Saved Successfully!")
 
 - **Response Time**: < 100ms average
 - **Model Size**: 
-  - SVM Pipeline: ~2-5 MB
-  - SBERT Embeddings: ~5-10 MB
-  - Total: ~10-15 MB
+  - SVM Pipeline: 300 KB
+  - SBERT Embeddings: 4000 KB
 - **Embedding Dimension**: 384 (all-MiniLM-L6-v2)
 - **Training Data**: Custom AUPP FAQ dataset
 - **Accuracy**: Optimized for FAQ matching with high precision
@@ -217,16 +200,28 @@ The `dataset.json` file contains FAQ pairs in the following format:
 
 ```json
 {
-  "faqs": [
-    {
-      "question": "What programs does AUPP offer?",
-      "answer": "AUPP offers undergraduate programs in Business, Computer Science, International Relations, and more."
-    },
-    {
-      "question": "How do I apply to AUPP?",
-      "answer": "You can apply through our online application portal. Visit the admissions page for details."
-    }
-  ]
+  {
+    "category": "Academic Policies",
+    "question": "When can I take a leave of absence from AUPP?",
+    "answer": "You can request a Leave of Absence (LOA) for life situations, medical conditions, or psychological conditions that significantly impair your ability to function successfully at the University.\n\nThe impairment must be recognized by a physician or the University.\n\nYou need to complete a LOA Form and submit it to the Office of the Registrar with appropriate signatures.",
+    "alt_questions": [
+      "How do I apply for a leave of absence?",
+      "Can I take time off from AUPP?",
+      "What are the rules for requesting a LOA?",
+      "When am I allowed to take a break from studies?"
+    ]
+  },
+  {
+    "category": "Academic Policies",
+    "question": "Who approves a leave of absence?",
+    "answer": "The authority to grant a Leave of Absence rests with the President.\n\nThe Office of the Registrar investigates your situation and makes a recommendation to the President.\n\nThe President also has the authority to grant permission to return from a LOA.",
+    "alt_questions": [
+      "Who decides if I can take a leave?",
+      "Which office approves my LOA request?",
+      "Does the Registrar approve leave of absence?",
+      "Who gives permission to return after a LOA?"
+    ]
+  }
 }
 ```
 
@@ -284,41 +279,6 @@ streamlit run app.py
 # Just save your changes and Streamlit will auto-reload
 ```
 
-### Code Style
-
-This project follows PEP 8 style guidelines. Use the following tools:
-
-- **Black**: Code formatter
-- **Flake8**: Linting
-- **isort**: Import sorting
-
-### Making Changes
-
-1. Create a new branch: `git checkout -b feature/your-feature-name`
-2. Make your changes
-3. Test thoroughly
-4. Commit: `git commit -m "Add your feature"`
-5. Push: `git push origin feature/your-feature-name`
-6. Create a Pull Request
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Contribution Guidelines
-
-- Write clear commit messages
-- Add tests for new features
-- Update documentation as needed
-- Follow the existing code style
-- Ensure all tests pass before submitting PR
-
 ## 🙏 Acknowledgments
 
 - American University of Phnom Penh (AUPP) for project inspiration
@@ -337,21 +297,5 @@ Contributions are welcome! Please follow these steps:
 - [ ] Create analytics dashboard for common queries
 - [ ] Add voice input support
 - [ ] Implement suggested questions feature
-
-## 📝 Requirements
-
-```txt
-streamlit==1.28.0
-scikit-learn==1.3.0
-sentence-transformers==2.2.2
-numpy==1.24.0
-pandas==2.0.0
-joblib==1.3.0
-torch==2.0.0
-```
-
-**Note**: `sentence-transformers` automatically installs PyTorch, which is required for SBERT models.
-
----
 
 **Note**: This is an academic project developed as part of ITM 454 course at AUPP.
