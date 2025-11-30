@@ -1,0 +1,39 @@
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.joblib
+
+# ---- Virtual Environments ----
+venv/
+env/
+.final-project-env/
+final-project-env/
+*.env/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+.virtual_documents/
+
+# ---- VSCode / IDE ----
+.vscode/
+.idea/
+
+# ---- OS-generated files ----
+.DS_Store
+Thumbs.db
+
+# ---- Logs ----
+*.log
+
+# ---- Environment Files ----
+.env
+*.env
+
+# ---- Dataset / Embeddings (optional) ----
+# Uncomment if you do not want to track dataset or embeddings
+# dataset.json
+# faq_with_embeddings.joblib
+
