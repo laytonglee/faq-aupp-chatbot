@@ -50,7 +50,7 @@ This project implements an intelligent FAQ chatbot system designed to automatica
 ## 📁 Project Structure
 
 ```
-ITM_454_FAQ_Chatbot/
+faq-aupp-chatbot/
 ├── app.py                              # Main Streamlit application
 ├── dataset.json                        # FAQ dataset with questions and answers
 ├── requirements.txt                    # Python dependencies
@@ -70,8 +70,9 @@ ITM_454_FAQ_Chatbot/
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/ITM_454_FAQ_Chatbot.git
-cd ITM_454_FAQ_Chatbot
+git clone https://github.com/laytonglee/faq-aupp-chatbot.git
+
+cd faq-aupp-chatbot
 ```
 
 ### Step 2: Create Virtual Environment
