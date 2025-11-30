@@ -24,11 +24,13 @@ This project implements an intelligent FAQ chatbot system designed to automatica
 
 ## ✨ Features
 
-- **Intelligent Query Understanding**: Uses TF-IDF vectorization and semantic embeddings to understand user intent
-- **Machine Learning Powered**: Implements SVM classifier for accurate question matching
-- **RESTful API**: Built with Flask for easy integration with web applications
-- **Pre-trained Models**: Includes pre-trained pipeline for immediate deployment
-- **Scalable Architecture**: Modular design allows for easy updates and maintenance
+- **Intelligent Query Understanding**: Uses both TF-IDF vectorization and SBERT semantic embeddings to understand user intent
+- **Dual ML Architecture**: Combines SVM classifier with semantic similarity search for robust matching
+- **Interactive Web Interface**: Built with Streamlit for easy-to-use chatbot interface
+- **Pre-trained Models**: Includes pre-trained SVM pipeline and SBERT embeddings for immediate deployment
+- **Semantic Understanding**: SBERT model understands meaning, not just keywords
+- **Real-time Responses**: Instant answers to user queries
+- **User-Friendly UI**: Clean and intuitive interface for non-technical users
 - **JSON-based Dataset**: Easy-to-update FAQ database stored in JSON format
 
 ## 🛠 Technologies Used
@@ -45,6 +47,8 @@ This project implements an intelligent FAQ chatbot system designed to automatica
 - **TF-IDF Vectorizer**: Text feature extraction
 - **Support Vector Machine (SVM)**: Classification algorithm
 - **Linear SVC**: Support Vector Classification with linear kernel
+- **SBERT (Sentence-BERT)**: Pre-trained transformer model for semantic embeddings
+- **all-MiniLM-L6-v2**: Lightweight and efficient sentence embedding model
 - **Pipeline**: Streamlined ML workflow
 
 ## 📁 Project Structure
@@ -112,61 +116,62 @@ python -c "import flask, sklearn, joblib; print('All dependencies installed succ
 
 ```bash
 # Make sure virtual environment is activated
-python app.py
+streamlit run app.py
 ```
 
-The application will start on `http://localhost:5000`
+The application will automatically open in your default browser at `http://localhost:8501`
 
-### Making API Requests
+### Using the Chatbot Interface
 
-#### Using cURL
+1. **Ask a Question**: Type your question in the text input box
+2. **Submit**: Click the "Ask" button or press Enter
+3. **View Response**: The chatbot will display the answer instantly
+4. **Ask Another Question**: Clear the input and ask a new question
 
-```bash
-curl -X POST http://localhost:5000/ask \
-  -H "Content-Type: application/json" \
-  -d '{"question": "What programs does AUPP offer?"}'
-```
+### Example Questions to Try
 
-#### Using Python
-
-```python
-import requests
-
-url = "http://localhost:5000/ask"
-data = {"question": "What are the admission requirements?"}
-
-response = requests.post(url, json=data)
-print(response.json())
-```
-
-#### Using JavaScript (Fetch API)
-
-```javascript
-fetch('http://localhost:5000/ask', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    question: 'How do I apply to AUPP?'
-  })
-})
-.then(response => response.json())
-.then(data => console.log(data));
-```
+- "What programs does AUPP offer?"
+- "How do I apply to AUPP?"
+- "What are the admission requirements?"
+- "Tell me about tuition fees"
+- "What is the campus location?"
 
 ## 🤖 Model Details
 
 ### Machine Learning Pipeline
 
-The chatbot uses a sophisticated ML pipeline consisting of:
+The chatbot uses a sophisticated dual-approach ML system:
 
 1. **Text Preprocessing**: Cleaning and normalization of input text
-2. **Feature Extraction**: TF-IDF vectorization to convert text to numerical features
+2. **Feature Extraction**: 
+   - **TF-IDF Vectorization**: Converts text to numerical features for SVM
+   - **SBERT Embeddings**: Creates semantic vector representations using all-MiniLM-L6-v2
 3. **Classification**: Linear SVM classifier to match questions to answers
-4. **Confidence Scoring**: Probability estimates for response confidence
+4. **Semantic Search**: Uses cosine similarity on embeddings for intelligent matching
+5. **Confidence Scoring**: Probability estimates for response confidence
 
 ### Training Process
+
+#### Step 1: Generate SBERT Embeddings
+
+```python
+from sentence_transformers import SentenceTransformer
+import numpy as np
+import pandas as pd
+import joblib
+
+# Load pre-trained SBERT model
+sbert = SentenceTransformer("all-MiniLM-L6-v2")
+
+# Generate embeddings for each question
+df_expanded["embedding"] = df_expanded["question"].apply(lambda x: sbert.encode(x))
+
+# Save embeddings for future use
+joblib.dump(df_expanded, "faq_with_embeddings.joblib")
+print("SBERT FAQ Embeddings Saved Successfully!")
+```
+
+#### Step 2: Train SVM Pipeline
 
 ```python
 from sklearn.pipeline import Pipeline
@@ -183,16 +188,26 @@ pipeline = Pipeline([
 pipeline.fit(questions, answers)
 
 # Save model
-import joblib
 joblib.dump(pipeline, 'pipeline_svm.joblib')
+print("SVM Pipeline Saved Successfully!")
 ```
+
+### Why Two Approaches?
+
+- **SVM with TF-IDF**: Fast, accurate for exact keyword matching
+- **SBERT Embeddings**: Understands semantic meaning, handles paraphrased questions
+- **Combined Power**: Best of both worlds for robust FAQ matching
 
 ### Model Performance
 
-- **Accuracy**: Optimized for FAQ matching
 - **Response Time**: < 100ms average
-- **Model Size**: Approximately 2-5 MB
+- **Model Size**: 
+  - SVM Pipeline: ~2-5 MB
+  - SBERT Embeddings: ~5-10 MB
+  - Total: ~10-15 MB
+- **Embedding Dimension**: 384 (all-MiniLM-L6-v2)
 - **Training Data**: Custom AUPP FAQ dataset
+- **Accuracy**: Optimized for FAQ matching with high precision
 
 ## 📊 Dataset
 
@@ -204,11 +219,12 @@ The `dataset.json` file contains FAQ pairs in the following format:
 {
   "faqs": [
     {
-      "id": 1,
       "question": "What programs does AUPP offer?",
-      "answer": "AUPP offers undergraduate programs in Business, Computer Science, International Relations, and more.",
-      "category": "academics",
-      "keywords": ["programs", "majors", "degrees"]
+      "answer": "AUPP offers undergraduate programs in Business, Computer Science, International Relations, and more."
+    },
+    {
+      "question": "How do I apply to AUPP?",
+      "answer": "You can apply through our online application portal. Visit the admissions page for details."
     }
   ]
 }
@@ -218,45 +234,39 @@ The `dataset.json` file contains FAQ pairs in the following format:
 
 1. Open `dataset.json`
 2. Add new FAQ entry following the structure above
-3. Retrain the model:
+3. Regenerate embeddings by running:
 
-```bash
-python train_model.py  # Create this script if needed
+```python
+from sentence_transformers import SentenceTransformer
+import pandas as pd
+import joblib
+
+# Load SBERT model
+sbert = SentenceTransformer("all-MiniLM-L6-v2")
+
+# Load your updated dataset
+df_expanded = pd.read_json("dataset.json")
+
+# Generate new embeddings
+df_expanded["embedding"] = df_expanded["question"].apply(lambda x: sbert.encode(x))
+
+# Save updated embeddings
+joblib.dump(df_expanded, "faq_with_embeddings.joblib")
+print("Embeddings updated successfully!")
 ```
+
+4. Restart the Streamlit application - the new FAQs will be automatically loaded
 
 ## 🌐 API Endpoints
 
-### POST /ask
+This application uses Streamlit's interactive interface and does not expose REST API endpoints. All interactions are handled through the web interface.
 
-Ask a question to the chatbot.
+### Application Features
 
-**Request:**
-```json
-{
-  "question": "What are the tuition fees?"
-}
-```
-
-**Response:**
-```json
-{
-  "question": "What are the tuition fees?",
-  "answer": "Tuition fees vary by program. Please contact admissions for detailed information.",
-  "confidence": 0.95,
-  "timestamp": "2024-11-30T10:30:00Z"
-}
-```
-
-### GET /health
-
-Check API health status.
-
-**Response:**
-```json
-{
-  "status": "healthy",
-  "version": "1.0.0"
-}
+- **Interactive Chat Interface**: Type questions directly in the web UI
+- **Real-time Processing**: Instant responses without page reloads
+- **Session State Management**: Maintains conversation context
+- **Clean UI**: Streamlit's native components for better user experience
 ```
 
 ## 🔧 Development
@@ -264,14 +274,14 @@ Check API health status.
 ### Setting Up Development Environment
 
 ```bash
-# Install development dependencies
-pip install -r requirements-dev.txt  # If available
+# Install dependencies
+pip install -r requirements.txt
 
-# Run tests
-python -m pytest tests/
+# Run the application
+streamlit run app.py
 
-# Run linting
-flake8 app.py
+# For development with auto-reload (default in Streamlit)
+# Just save your changes and Streamlit will auto-reload
 ```
 
 ### Code Style
@@ -293,64 +303,63 @@ This project follows PEP 8 style guidelines. Use the following tools:
 
 ## 🚢 Deployment
 
-### Deployment Options
+### Deployment on Streamlit Community Cloud (Recommended)
 
-#### Option 1: Heroku
+Streamlit Community Cloud offers free hosting for Streamlit applications:
 
+1. **Push your code to GitHub**:
 ```bash
-# Install Heroku CLI
-# Login to Heroku
-heroku login
-
-# Create new app
-heroku create your-app-name
-
-# Deploy
-git push heroku main
+git add .
+git commit -m "Prepare for deployment"
+git push origin main
 ```
 
-#### Option 2: AWS EC2
+2. **Deploy on Streamlit Cloud**:
+   - Go to [share.streamlit.io](https://share.streamlit.io)
+   - Sign in with your GitHub account
+   - Click "New app"
+   - Select your repository, branch, and main file (`app.py`)
+   - Click "Deploy"
 
-1. Launch EC2 instance
-2. SSH into instance
-3. Clone repository
-4. Install dependencies
-5. Run with Gunicorn:
+3. **Your app will be live** at: `https://[your-app-name].streamlit.app`
+
+### Local Deployment with Port Forwarding
+
+For local deployment with external access:
 
 ```bash
-gunicorn app:app --bind 0.0.0.0:5000
+# Run with custom port
+streamlit run app.py --server.port 8080
+
+# Run with external access
+streamlit run app.py --server.address 0.0.0.0
 ```
 
-#### Option 3: Docker
+### Running in Background
 
-```dockerfile
-FROM python:3.9-slim
-
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-COPY . .
-
-CMD ["python", "app.py"]
-```
-
-Build and run:
 ```bash
-docker build -t faq-chatbot .
-docker run -p 5000:5000 faq-chatbot
+# Using nohup
+nohup streamlit run app.py &
+
+# Using screen
+screen -S chatbot
+streamlit run app.py
+# Press Ctrl+A then D to detach
 ```
 
 ## 📝 Requirements
 
 ```txt
-Flask==2.3.0
+streamlit==1.28.0
 scikit-learn==1.3.0
+sentence-transformers==2.2.2
 numpy==1.24.0
 pandas==2.0.0
 joblib==1.3.0
-gunicorn==21.2.0
+torch==2.0.0
 ```
+
+**Note**: `sentence-transformers` automatically installs PyTorch, which is required for SBERT models.
 
 ## 🤝 Contributing
 
@@ -392,14 +401,16 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🔮 Future Enhancements
 
-- [ ] Add multi-language support
-- [ ] Implement conversation history tracking
-- [ ] Add admin dashboard for FAQ management
-- [ ] Integrate with AUPP website directly
-- [ ] Add natural language generation for dynamic responses
-- [ ] Implement feedback mechanism for continuous improvement
-- [ ] Add authentication and rate limiting
-- [ ] Create mobile application interface
+- [ ] Add conversation history display in sidebar
+- [ ] Implement multi-language support (Khmer, English)
+- [ ] Add confidence score display for answers
+- [ ] Create admin panel for FAQ management
+- [ ] Add export conversation feature
+- [ ] Implement user feedback mechanism
+- [ ] Add search functionality for FAQ database
+- [ ] Create analytics dashboard for common queries
+- [ ] Add voice input support
+- [ ] Implement suggested questions feature
 
 ## 📈 Version History
 
@@ -414,4 +425,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 **Note**: This is an academic project developed as part of ITM 454 course at AUPP.
 
 For questions or issues, please open an issue on GitHub or contact the maintainers.
-
