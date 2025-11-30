@@ -301,66 +301,6 @@ This project follows PEP 8 style guidelines. Use the following tools:
 5. Push: `git push origin feature/your-feature-name`
 6. Create a Pull Request
 
-## 🚢 Deployment
-
-### Deployment on Streamlit Community Cloud (Recommended)
-
-Streamlit Community Cloud offers free hosting for Streamlit applications:
-
-1. **Push your code to GitHub**:
-```bash
-git add .
-git commit -m "Prepare for deployment"
-git push origin main
-```
-
-2. **Deploy on Streamlit Cloud**:
-   - Go to [share.streamlit.io](https://share.streamlit.io)
-   - Sign in with your GitHub account
-   - Click "New app"
-   - Select your repository, branch, and main file (`app.py`)
-   - Click "Deploy"
-
-3. **Your app will be live** at: `https://[your-app-name].streamlit.app`
-
-### Local Deployment with Port Forwarding
-
-For local deployment with external access:
-
-```bash
-# Run with custom port
-streamlit run app.py --server.port 8080
-
-# Run with external access
-streamlit run app.py --server.address 0.0.0.0
-```
-
-### Running in Background
-
-```bash
-# Using nohup
-nohup streamlit run app.py &
-
-# Using screen
-screen -S chatbot
-streamlit run app.py
-# Press Ctrl+A then D to detach
-```
-
-## 📝 Requirements
-
-```txt
-streamlit==1.28.0
-scikit-learn==1.3.0
-sentence-transformers==2.2.2
-numpy==1.24.0
-pandas==2.0.0
-joblib==1.3.0
-torch==2.0.0
-```
-
-**Note**: `sentence-transformers` automatically installs PyTorch, which is required for SBERT models.
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
@@ -379,25 +319,11 @@ Contributions are welcome! Please follow these steps:
 - Follow the existing code style
 - Ensure all tests pass before submitting PR
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 👥 Authors
-
-- **Your Name** - *Initial work* - [YourGitHub](https://github.com/yourusername)
-
 ## 🙏 Acknowledgments
 
 - American University of Phnom Penh (AUPP) for project inspiration
 - ITM 454 course instructors and teaching assistants
 - Open source community for amazing tools and libraries
-
-## 📞 Contact
-
-- **Project Maintainer**: Your Name
-- **Email**: your.email@example.com
-- **Project Link**: https://github.com/yourusername/ITM_454_FAQ_Chatbot
 
 ## 🔮 Future Enhancements
 
@@ -412,16 +338,20 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - [ ] Add voice input support
 - [ ] Implement suggested questions feature
 
-## 📈 Version History
+## 📝 Requirements
 
-- **v1.0.0** (2024-11-30)
-  - Initial release
-  - Basic FAQ chatbot functionality
-  - SVM-based classification
-  - REST API implementation
+```txt
+streamlit==1.28.0
+scikit-learn==1.3.0
+sentence-transformers==2.2.2
+numpy==1.24.0
+pandas==2.0.0
+joblib==1.3.0
+torch==2.0.0
+```
+
+**Note**: `sentence-transformers` automatically installs PyTorch, which is required for SBERT models.
 
 ---
 
 **Note**: This is an academic project developed as part of ITM 454 course at AUPP.
-
-For questions or issues, please open an issue on GitHub or contact the maintainers.
