@@ -1288,17 +1288,6 @@
   },
   {
     "category": "Career/Faculty Info",
-    "question": "How many undergraduate programs does AUPP offer?",
-    "answer": "As of 2021, AUPP offers seven undergraduate programs and an MBA program.",
-    "alt_questions": [
-      "How many programs are available at AUPP?",
-      "What degrees does AUPP offer?",
-      "How many majors does AUPP have?",
-      "Does AUPP offer graduate programs?"
-    ]
-  },
-  {
-    "category": "Career/Faculty Info",
     "question": "What makes AUPP unique among Cambodian universities?",
     "answer": "AUPP is the only university in Cambodia to provide accredited international degrees through dual-degree programs with partner institutions including the University of Arizona and Fort Hays State University.",
     "alt_questions": [
@@ -3114,13 +3103,35 @@
   },
   {
     "category": "Programs & Majors",
-    "question": "What are the differences between a Single and Dual degree?",
-    "answer": "Dual degree students graduate with two degrees: one from AUPP and one from a partner university (University of Arizona or Fort Hays State University). Tuition fees differ: Dual degree costs $9,000 per year, Single degree costs $6,000 per year. Dual degree students have access to partner university resources, exchange programs, and graduation ceremonies abroad. Both degrees are internationally accredited and recognized worldwide.",
+    "question": "Do all students need to take an English Placement Test to enroll at AUPP?",
+    "answer": "All new students take the English Placement Test because it is part of AUPP’s policy. The test is free and used to check your English level for admission. The test is not required if you submit an IELTS score of 6.0 or a TOEFL iBT score of 79 earned within two years. If your test is waived, you submit an Elevator Pitch video as part of your application.",
     "alt_questions": [
-      "What is the difference between single and dual degrees?",
-      "How do dual degrees compare to single degrees?",
-      "What are the benefits of a dual degree?",
-      "What does a dual degree include?"
+      "Do I need the EPT for AUPP?",
+      "Is the English test required at AUPP?",
+      "How do I meet the English requirement for AUPP?",
+      "When is the EPT waived at AUPP?"
+    ]
+  },
+  {
+    "category": "Programs & Majors",
+    "question": "Do I need to take the English Placement Test if I come from the U.S.?",
+    "answer": "Students with passports from the United States, United Kingdom, Australia, New Zealand, or Canada do not take the English Placement Test. They meet the English requirement automatically.",
+    "alt_questions": [
+      "Is the EPT required for U.S. passport holders?",
+      "Do native English speakers need the EPT at AUPP?",
+      "Who is exempt from the English test at AUPP?",
+      "Does AUPP require English testing for American students?"
+    ]
+  },
+  {
+    "category": "Programs & Majors",
+    "question": "What if I do not pass the English Placement Test? Can I still enroll in AUPP?",
+    "answer": "Students who do not meet the required English level enter the English Preparatory Program. The test result places you into Level 2, Level 3, Level 4, or Collegiate level. Level 2 students study at least three semesters. Level 3 students study at least two semesters. Level 4 students study at least one semester. Collegiate level students enroll in Year 1 directly. Each semester lasts four months and there are three semesters each year. You must pass a standardized exam to move to the next level, and strong students may skip a level with faculty approval.",
+    "alt_questions": [
+      "What happens if I fail the EPT at AUPP?",
+      "Can I still join AUPP if my English score is low?",
+      "How does the English Preparatory Program work?",
+      "What level do I enter if I do not pass the EPT?"
     ]
   },
   {
@@ -3157,6 +3168,50 @@
     ]
   },
   {
+    "category": "Programs & Majors",
+    "question": "What is the main focus in the Business program?",
+    "answer": "The Business program focuses on management, human resources, marketing, and accounting and finance. It gives students a strong understanding of how companies operate and prepares them for roles in staff or management at companies, organizations, or public institutions.",
+    "alt_questions": [
+      "What does the Business program cover?",
+      "Which areas are emphasized in Business studies?",
+      "What skills will I gain in the Business program?",
+      "What careers does the Business program prepare students for?"
+    ]
+  },
+  {
+    "category": "Programs & Majors",
+    "question": "What is the main focus in the International Relations and Diplomacy program?",
+    "answer": "The International Relations and Diplomacy program focuses on diplomacy, foreign policy, political theory, international political economy, international organizations, and research methods. It combines elements of political science and international relations, preparing students for careers in companies, NGOs, universities, embassies, public institutions like the Ministry of Foreign Affairs, and international organizations.",
+    "alt_questions": [
+      "What does the International Relations and Diplomacy program cover?",
+      "How is International Relations and Diplomacy different from Political Science?",
+      "Which skills do students gain in International Relations and Diplomacy?",
+      "What careers can I pursue with this major?"
+    ]
+  },
+  {
+    "category": "Programs & Majors",
+    "question": "What is the main focus of the Information and Communications Technology (ICT) program? How is it different from Information Technology Management (ITM)?",
+    "answer": "The ICT program focuses on managing and leading computer-based information systems. Graduates can work in telecommunications, networks, and IT fields. ITM focuses on programming languages such as Java, C++, and Python, preparing students for roles as IT specialists, network managers, website designers, and IT management positions.",
+    "alt_questions": [
+      "What does the ICT program cover?",
+      "How is ICT different from ITM at AUPP?",
+      "Which careers can I pursue with ICT or ITM?",
+      "What skills do students gain in ICT and ITM?"
+    ]
+  },
+  {
+    "category": "Programs & Majors",
+    "question": "What is the main focus of the Law program? Can those who enroll in the Law program work as a prosecutor, lawyer, and judge in Cambodia?",
+    "answer": "The Law program focuses on Cambodian law, U.S. law, and international law. Graduates who want to work as a prosecutor, lawyer, or judge in Cambodia must take additional exams and complete 1 to 2 years of further study as required by the government.",
+    "alt_questions": [
+      "What areas does the Law program cover?",
+      "Can Law graduates work as lawyers or judges in Cambodia?",
+      "How is the Law program structured at AUPP?",
+      "What further steps are needed to practice law in Cambodia?"
+    ]
+  },
+  {
     "category": "Professional Programs",
     "question": "In what year am I required to do the internship? Do I find it by myself or does the school help with this?",
     "answer": "Students must complete an internship in Year 3 to gain practical experience. The Student Affairs Coordinator provides support with placement, and faculty supervise internships to ensure a positive experience.",
@@ -3168,6 +3223,50 @@
     ]
   },
   {
+    "category": "University Info",
+    "question": "What is the academic year at AUPP? How many classes does a full-time student take?",
+    "answer": "AUPP follows the American academic calendar with a Fall semester (mid-August to late December), a Spring semester (mid-January to early May), and two 6-week Summer terms (May-June and July-August). Full-time students typically take 5 courses per semester. Summer courses are optional, with a maximum of 2 courses per Summer term.",
+    "alt_questions": [
+      "How is the academic year structured at AUPP?",
+      "How many courses do full-time students take per semester?",
+      "When do AUPP semesters start and end?",
+      "Are Summer courses required at AUPP?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "How many hours do I need to study in class per day?",
+    "answer": "Students typically study 3 hours per day in class from Monday to Friday, depending on their schedule. In addition, students spend about 4.5 hours per day on self-study, including completing assignments, reading, and working on group projects.",
+    "alt_questions": [
+      "How many hours are in-class study per day at AUPP?",
+      "How much time do students spend on self-study?",
+      "What is the daily study load for AUPP students?",
+      "How long do students spend on assignments and group work?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "What student clubs do you have at AUPP? How many clubs can students join?",
+    "answer": "AUPP has 25 student-led clubs. Sports clubs include football, badminton, tennis, and basketball. Other clubs include debate, media, Chinese, and photography, usually meeting once a week. Students are encouraged to volunteer through the Center for Student Initiatives (CSI), and they can receive academic credit for extracurricular activities. Students can join multiple clubs depending on their interest and schedule.",
+    "alt_questions": [
+      "Which clubs are available at AUPP?",
+      "How many clubs can a student join at AUPP?",
+      "Does AUPP offer sports and academic clubs?",
+      "Can I earn credit for club activities at AUPP?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "What else do students do besides studying or joining extra-curricular activities?",
+    "answer": "Students also participate in voluntary work and internships to gain practical experience and develop leadership skills. They may join competitions in business, law, and debates, serve on Student Government, participate in Model UN or Model ASEAN, help plan events like the Khmer New Year Party, become Peer Tutors, or attend activities organized by the Center for Southeast Asian Studies.",
+    "alt_questions": [
+      "What opportunities are there beyond classes and clubs at AUPP?",
+      "Do students do internships or volunteer work?",
+      "Can students join competitions or leadership programs?",
+      "What activities does the Center for Southeast Asian Studies offer?"
+    ]
+  },
+  {
     "category": "Professional Programs",
     "question": "What do AUPP students usually do after they graduate?",
     "answer": "Graduates start businesses, work in companies, organizations, public institutions, or pursue postgraduate education abroad.",
@@ -3176,6 +3275,39 @@
       "Do AUPP graduates find jobs?",
       "What do alumni do after AUPP?",
       "Do AUPP students pursue postgraduate study?"
+    ]
+  },
+  {
+    "category": "Professional Programs",
+    "question": "Does AUPP provide any support for students to find a job after they graduate?",
+    "answer": "AUPP provides guidance to students and alumni to help them succeed in their careers. Many companies, organizations, and public institutions recruit AUPP graduates because they are highly capable and talented.",
+    "alt_questions": [
+      "How does AUPP help students find jobs?",
+      "Does AUPP offer career support for graduates?",
+      "Are there recruitment opportunities for AUPP students?",
+      "What support does AUPP provide for alumni employment?"
+    ]
+  },
+  {
+    "category": "Professional Programs",
+    "question": "Do students successfully complete graduate degrees abroad after they complete their degree at AUPP?",
+    "answer": "Yes, many AUPP alumni are currently pursuing or have successfully completed Master's, Juris Doctor (JD), and PhD degrees in the US, Australia, England, and other countries.",
+    "alt_questions": [
+      "Can AUPP graduates study abroad for a graduate degree?",
+      "Do alumni pursue Master’s or PhD programs overseas?",
+      "Have AUPP students completed advanced degrees abroad?",
+      "Which countries do alumni go to for graduate studies?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "Will my AUPP transcript and course credits be accepted in universities in the U.S.?",
+    "answer": "AUPP transcripts and course credits are recognized by the University of Arizona (UA) and Fort Hays State University (FHSU), both accredited by the Higher Learning Commission (HLC). U.S. universities that recognize UA’s and FHSU’s credits generally accept AUPP’s credits as well. Some students may need to take additional courses depending on the university or major.",
+    "alt_questions": [
+      "Are AUPP credits recognized in the U.S.?",
+      "Can I transfer AUPP courses to U.S. universities?",
+      "Do U.S. universities accept AUPP transcripts?",
+      "Will I need extra courses when transferring from AUPP to a U.S. university?"
     ]
   },
   {
@@ -3191,6 +3323,47 @@
   },
   {
     "category": "Tuition Fees & Scholarships",
+    "question": "Can I pay full tuition fees for the whole year in advance?",
+    "answer": "Yes, AUPP accepts full tuition payments before the start of the academic year.",
+    "alt_questions": [
+      "Can I pay my annual tuition upfront?",
+      "Is it possible to pay the full year tuition in advance?",
+      "Does AUPP allow full tuition payment before classes start?",
+      "Can students pay for all semesters at once?"
+    ]
+  },
+  {
+    "category": "Tuition Fees & Scholarships",
+    "question": "Can I pay tuition fees in installments?",
+    "answer": "Yes, students in financial difficulty may request a payment plan in installments through AUPP management.",
+    "alt_questions": [
+      "Is it possible to pay tuition in parts?",
+      "Can I split my tuition payment at AUPP?",
+      "Does AUPP allow installment payments for tuition?"
+    ]
+  },
+  {
+    "category": "Tuition Fees & Scholarships",
+    "question": "Can I obtain a loan if I don’t have financial means to pay the full tuition fees?",
+    "answer": "Yes, students in financial difficulty may apply for an interest-free education loan during their studies. The payback schedule is set at 50% of their income once they start working, as determined by AUPP management.",
+    "alt_questions": [
+      "Does AUPP offer tuition loans?",
+      "Can I get a loan for my studies at AUPP?",
+      "How do I apply for an education loan at AUPP?"
+    ]
+  },
+  {
+    "category": "Tuition Fees & Scholarships",
+    "question": "Does AUPP provide special fees for twins or siblings?",
+    "answer": "Yes, siblings who enroll at AUPP receive a 10% discount for the second child while the elder is still studying.",
+    "alt_questions": [
+      "Is there a sibling discount at AUPP?",
+      "Do twins or siblings get tuition discounts?",
+      "How much discount do siblings get at AUPP?"
+    ]
+  },
+  {
+    "category": "Tuition Fees & Scholarships",
     "question": "Does AUPP provide scholarships?",
     "answer": "Yes. Scholarships are awarded based on National Examination results. Merit scholarships are for Grade A or B students. Full scholarships are for Grade A students with financial need.",
     "alt_questions": [
@@ -3201,14 +3374,113 @@
     ]
   },
   {
+    "category": "Tuition Fees & Scholarships",
+    "question": "Does AUPP provide scholarships?",
+    "answer": "Yes, AUPP offers scholarships for students with Grade A or B on their National Examinations. There are merit scholarships for students with Grades A or B, and full scholarships for students with Grade A who also have financial need.",
+    "alt_questions": [
+      "Are scholarships available at AUPP?",
+      "Who is eligible for AUPP scholarships?",
+      "Does AUPP offer financial aid for students?",
+      "What types of scholarships does AUPP have?"
+    ]
+  },
+  {
+    "category": "Tuition Fees & Scholarships",
+    "question": "How can I qualify for a scholarship at AUPP?",
+    "answer": "Scholarships are awarded based on academic achievement, potential, and the socioeconomic status of the student’s family. Deserving students who need financial aid may qualify.",
+    "alt_questions": [
+      "What are the criteria for AUPP scholarships?",
+      "Who can get a scholarship at AUPP?",
+      "How is scholarship eligibility determined?",
+      "What factors are considered for scholarship awards?"
+    ]
+  },
+  {
+    "category": "Tuition Fees & Scholarships",
+    "question": "How do I apply for a merit scholarship?",
+    "answer": "To apply for a merit scholarship, complete the online scholarship application form and submit your Grade 10, 11, and 12 transcripts along with your high school diploma. If the diploma is not available, submit an academic recommendation letter. Applicants must have achieved Grade A or B on the National Examination. Send documents to admissions@aupp.edu.kh.",
+    "alt_questions": [
+      "What is the application process for a merit scholarship?",
+      "Which documents are needed for a merit scholarship?",
+      "How do I submit my merit scholarship application?",
+      "Who is eligible for a merit scholarship at AUPP?"
+    ]
+  },
+  {
+    "category": "Tuition Fees & Scholarships",
+    "question": "How do I apply for a full scholarship?",
+    "answer": "To apply for a full scholarship, complete the online application and submit the required documents: Grade 10, 11, 12 transcripts, 2 personal statements, and the full scholarship form from the AUPP website. Applicants must have achieved Grade A on the National Examination. Send all documents to admissions@aupp.edu.kh.",
+    "alt_questions": [
+      "What is the process to apply for a full scholarship?",
+      "Which documents are needed for a full scholarship?",
+      "How do I submit a full scholarship application?",
+      "Who can apply for a full scholarship at AUPP?"
+    ]
+  },
+  {
+    "category": "Tuition Fees & Scholarships",
+    "question": "What is the difference between merit and full scholarships at AUPP?",
+    "answer": "Merit scholarships are for students with Grade A or B and cover 50% for Grade A or 30% for Grade B for single degree programs (2 years for dual degrees, same percentages for Year 1 and 2, none for Year 3 and 4). Full scholarships are for students with Grade A and financial need, covering 100% for single degrees (2 years for dual degrees, none for Year 3 and 4). Both last 4 years for single degrees.",
+    "alt_questions": [
+      "How do merit and full scholarships differ?",
+      "What are the eligibility criteria for each scholarship type?",
+      "Which scholarship offers full coverage?",
+      "How long do merit and full scholarships last?"
+    ]
+  },
+  {
     "category": "University Info",
     "question": "How do I apply to AUPP?",
-    "answer": "Information on application process, requirements, and criteria is available on the AUPP website.",
+    "answer": "Before applying, check the Admissions Criteria for eligibility. Then submit the online application. Step 1, pay the $35 application fee in cash at the finance office or by bank transfer after submitting the online form. Step 2, schedule the English Placement Test through the EPT information page or check if you qualify for a waiver. Step 3, send any missing required documents by email or Telegram. After you complete the application, meet the English requirement, and submit all documents, you will receive an admission offer by email. Accept the offer, wait for course registration and the tuition invoice, pay tuition, join orientation day, and attend your first lesson.",
     "alt_questions": [
       "What is the application process at AUPP?",
       "How can I apply to AUPP?",
       "Where do I find admission requirements?",
       "What are the steps to apply at AUPP?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "How many majors does AUPP have?",
+    "answer": "AUPP offers bachelor programs under four faculties. The Faculty of Business and Management provides single and dual degrees in Business Administration, Communications, and eSociety. The Faculty of Digital Technologies offers programs in Digital Infrastructure, Software Development, Cybersecurity, Data Science, and AI. The Faculty of Law prepares students for careers in legal, business, and government fields. The Faculty of Social Sciences covers General Education and International Relations and Diplomacy. AUPP also offers master's programs in Business Administration, Legal Studies, International Business and Digital Technologies, Artificial Intelligence Law, Cybersecurity Law, and Computer Science with an AI specialization.",
+    "alt_questions": [
+      "How many programs are available at AUPP?",
+      "What degrees does AUPP offer?",
+      "How many undergraduate programs does AUPP offer?",
+      "Does AUPP offer graduate programs?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "What are the admission criteria at AUPP?",
+    "answer": "AUPP requires three sets of documents for admission. First, proof of identity such as a national ID, passport, or birth certificate. Second, proof of high school graduation, which depends on your school type. Public and Khmer private schools must submit the national diploma and transcript. International programs need an official diploma and a 12th grade transcript or national diploma. International students must provide certified and translated diplomas and transcripts. Transfer applicants must include their high school diploma, transcripts for all completed courses, and course syllabi. Third, proof of English proficiency. You take the English Placement Test unless you submit TOEFL 79, IELTS 6.0, AP English score of 4 or 5, IB HL English score of 5, A Level English grade D, or a transferable collegiate English course. For questions, contact the Office of Admissions at 012 266 631 or admissions@aupp.edu.kh.",
+    "alt_questions": [
+      "What documents do I need for AUPP admission?",
+      "What are AUPP entry requirements?",
+      "How do I qualify for AUPP?",
+      "What does AUPP need from new applicants?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "Why should I study at AUPP and not go directly to study abroad?",
+    "answer": "Studying at AUPP is more affordable, costing a maximum of $36,000 for 4 years, which is less than studying abroad for 1 year. It allows families with multiple children to finance education for all siblings. Graduating from AUPP enables students to pursue a Master’s degree abroad while saving money. It also provides a safe environment for young graduates and helps students gain knowledge of Cambodian society, culture, and networks, which can support future career success.",
+    "alt_questions": [
+      "What are the benefits of studying at AUPP versus abroad?",
+      "Why choose AUPP for undergraduate studies?",
+      "How does AUPP prepare students for further studies abroad?",
+      "Is it better to study at AUPP before going overseas?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "What’s the difference between graduating from AUPP and from other local universities?",
+    "answer": "Graduating from AUPP provides a different level of knowledge compared to local universities. All courses are conducted in English, which enhances communication skills for global workplaces. AUPP graduates have better access to scholarships and postgraduate programs worldwide, and they can more easily secure jobs with competitive salaries.",
+    "alt_questions": [
+      "How is an AUPP degree different from local universities?",
+      "Why choose AUPP over other universities in Cambodia?",
+      "Does AUPP prepare students better for international opportunities?",
+      "What advantages do AUPP graduates have in the job market?"
     ]
   },
   {
@@ -4517,7 +4789,9 @@
       "When was AUPP established?",
       "What makes AUPP unique?",
       "Who founded AUPP?",
-      "What is special about AUPP’s curriculum?"
+      "What is special about AUPP’s curriculum?",
+      "Tell me about AUPP Background",
+      "What is AUPP?"
     ]
   },
   {
@@ -4540,6 +4814,94 @@
       "Can you explain the mission of AUPP?",
       "What does AUPP aim to achieve?",
       "What is the purpose of AUPP?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "When was AUPP established?",
+    "answer": "AUPP was established in 2013 as a Cambodian university with an American-style curriculum.",
+    "alt_questions": [
+      "What year was AUPP founded?",
+      "When did AUPP begin?",
+      "In what year did AUPP start?",
+      "When did the American University of Phnom Penh open?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "What principles was AUPP founded on?",
+    "answer": "AUPP was founded on principles including highly qualified senior managers, experienced administrators, faculty with Western doctorates, a U.S.-standard curriculum balancing liberal arts and major coursework, and the recruitment of high-achieving students.",
+    "alt_questions": [
+      "What are the founding principles of AUPP?",
+      "On what core values was AUPP established?",
+      "What guidelines shaped the founding of AUPP?",
+      "What principles guide AUPP’s academic model?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "Who oversees the development of AUPP?",
+    "answer": "AUPP’s development is overseen by an international Board of Trustees composed of American educators, U.S. higher education executives, and business leaders from Cambodia and around the world.",
+    "alt_questions": [
+      "Who directs AUPP’s development?",
+      "What is the role of the AUPP Board of Trustees?",
+      "Who are the members of AUPP’s governing board?",
+      "Who governs the American University of Phnom Penh?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "What features does AUPP’s campus offer?",
+    "answer": "The AUPP campus, opened in 2017, includes model classrooms, digital learning platforms, a Teaching & Learning Center, a modern library, sports facilities, and student activity spaces that support academic growth.",
+    "alt_questions": [
+      "What facilities are available on the AUPP campus?",
+      "What does the AUPP campus provide?",
+      "What can students find at the AUPP campus?",
+      "What are the key features of AUPP’s 2017 campus?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "What are AUPP students like?",
+    "answer": "AUPP students are ambitious and motivated to contribute to Cambodia's development. They come from all over the country and increasingly from other nations, and many receive merit-based and need-based scholarships.",
+    "alt_questions": [
+      "Who are the students at AUPP?",
+      "What is unique about AUPP students?",
+      "What type of students attend AUPP?",
+      "Where do AUPP students come from?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "What dual degree programs does AUPP offer?",
+    "answer": "Since 2016, AUPP has offered dual degree programs with the University of Arizona in the School of Business and School of Law, and with Fort Hays State University in the School of Digital Technologies, School of Business, and School of Social Sciences.",
+    "alt_questions": [
+      "What are AUPP’s dual degree options?",
+      "Which universities partner with AUPP for dual degrees?",
+      "What dual degree programs does AUPP have with U.S. universities?",
+      "What can students study under AUPP’s dual degree programs?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "Is AUPP accredited?",
+    "answer": "Yes, AUPP is fully accredited from 2019 to 2028. The institutional accreditation covers all degree programs under national standards.",
+    "alt_questions": [
+      "What accreditation does AUPP have?",
+      "Is AUPP a fully accredited university?",
+      "Until when is AUPP accredited?",
+      "Does AUPP meet national accreditation standards?"
+    ]
+  },
+  {
+    "category": "University Info",
+    "question": "What is AUPP’s mission in Cambodia?",
+    "answer": "AUPP aims to be a model university that supports Cambodia’s human capital development, contributes to the Pentagonal Strategy and Digital Skill Development Roadmap, and promotes global citizenship for a more equitable world.",
+    "alt_questions": [
+      "What is the mission of AUPP?",
+      "How does AUPP contribute to Cambodia’s development?",
+      "What goals does AUPP aim to achieve?",
+      "What is AUPP’s role in Cambodia’s national strategy?"
     ]
   },
   {
